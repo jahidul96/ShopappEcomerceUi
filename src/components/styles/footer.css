@@ -1,0 +1,142 @@
+.footer {
+    background-color: #2e2e54;
+    padding: 50px 20px;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+
+
+.footerContainer>div>h3 {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.footerContainer>div>ul>li {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.footerLastDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qrcodeWrapper {
+    margin-bottom: 20px;
+}
+
+.qrcodeWrapper>img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.appBtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appBtnContainer>div:first-child {
+    margin-right: 10px;
+}
+
+.appBtn {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    border: 1px solid #bbb;
+    padding: 3px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.appBtn>span {
+    margin-right: 5px;
+    margin-left: -10px;
+}
+
+.appBtn>div>p:first-child {
+    font-size: 10px;
+    margin-bottom: 1px;
+}
+
+.myName {
+    background-color: #2e2e54;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    border-top: 2px solid #bbb;
+}
+
+.myName>p {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+@media(max-width:900px) {
+    .appBtn {
+        padding: 2px 15px;
+    }
+
+    .appStoreNameStyle {
+        font-size: 12px;
+    }
+
+    .footerContainer>div>h3 {
+        margin-bottom: 10px;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .footerContainer>div>ul>li {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 12px;
+    }
+}
+
+@media(max-width:767px) {
+    .qrcodeWrapper>img {
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+    }
+
+    .footerContainer>div>h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .footerContainer>div>ul>li {
+        font-size: 10px;
+    }
+
+    .appStoreNameStyle {
+        font-size: 10px;
+    }
+}
+
+@media(max-width:600px) {
+    .footerContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerContainer>div {
+        margin-bottom: 30px;
+    }
+}

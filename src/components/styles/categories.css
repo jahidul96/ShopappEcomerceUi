@@ -1,0 +1,45 @@
+.categories {
+    margin-top: 50px;
+}
+
+.categories>h2 {
+    font-weight: 400;
+    font-size: 25px;
+    margin-bottom: 5px;
+
+}
+
+.categoriesFlexItemWrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categoriesItemElement {
+    width: 170px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.categoriesItemElement>img {
+    width: 80px;
+    height: 80px;
+}
+
+.categoriesItemElement>p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media(max-width:366px) {
+    .categoriesItemElement {
+        width: 140px;
+        height: 160px;
+    }
+}

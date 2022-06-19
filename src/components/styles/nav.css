@@ -1,0 +1,248 @@
+.navbar {
+    background-color: #fff;
+
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navItemWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLogoDiv {
+    flex: 2.5;
+}
+
+.navLogoDiv>h2 {
+    color: #f85606;
+    font-size: 30px;
+    margin-top: -5px;
+}
+
+.navMiddleDiv {
+    flex: 7.5;
+
+}
+
+.navMiddleDiv>div {
+    width: 90%;
+    background-color: rgba(158, 158, 158, .2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+}
+
+.navbarInput {
+    width: 100%;
+    height: 20px;
+    outline: none;
+    padding: 0 10px;
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+}
+
+.searchBtn {
+    background-color: #f85606;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    padding: 0 15px;
+}
+
+.navRightDiv {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navRightDiv>div>div {
+    position: relative;
+}
+
+.cartItemCounter {
+    background-color: red;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+.downoadapp {
+    background-color: #f85606;
+    color: #fff;
+    font-weight: 500;
+    padding: 0px 20px;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuIcon {
+    display: none;
+}
+
+/* small screen search */
+
+.smallScreenSearch {
+    display: none;
+}
+
+.smallScreenPrenav {
+    display: none;
+}
+
+@media(max-width:1250px) {
+    .navLogoDiv {
+        flex: 2;
+    }
+
+    .navLogoDiv>h2 {
+        font-size: 25px;
+    }
+
+    .navMiddleDiv {
+        flex: 7;
+
+    }
+
+    .navRightDiv {
+        flex: 3;
+    }
+}
+
+@media(max-width:1000px) {
+    .navMiddleDiv>div {
+        height: 35px;
+    }
+
+    .searchBtn {
+        height: 35px;
+        padding: 0 10px;
+    }
+
+    .downoadapp {
+        padding: 0px 10px;
+        height: 35px;
+        float: right;
+    }
+
+}
+
+@media(max-width:872px) {
+    .downoadapp {
+        font-size: 14px;
+    }
+
+    .navLogoDiv>h2 {
+        font-size: 22px;
+    }
+}
+
+@media(max-width:767px) {
+
+
+    .navMiddleDiv {
+        display: none;
+    }
+
+    .downoadapp {
+        display: none;
+    }
+
+    .menuIcon {
+        display: block;
+        cursor: pointer;
+
+        margin-top: 3px;
+    }
+
+    .navbar {
+
+        height: 50px;
+        position: relative;
+    }
+
+    .cartIcon {
+        position: fixed;
+        top: 400px;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #bbb;
+        width: 80px;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .smallScreenNavigationStyles {
+        display: flex;
+        flex-direction: column;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        min-height: 70px;
+        background-color: #fafafa;
+
+        overflow: hidden;
+    }
+
+    .smallScreenSearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+
+    }
+
+    .navSmallSearchInput {
+        width: 80%;
+    }
+
+    .smallScreenDownloadBtn {
+        padding: 6px 10px;
+        background-color: #f85606;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        border-radius: 5px;
+        margin-right: 20px;
+    }
+
+    .smallScreenPrenav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+
+    .smallScreenPrenav>button {
+        margin-bottom: 5px;
+        margin-right: 5px;
+        cursor: pointer;
+        padding: 1px 5px;
+
+    }
+
+}
