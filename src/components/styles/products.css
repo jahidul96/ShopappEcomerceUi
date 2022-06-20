@@ -62,10 +62,22 @@
     margin-bottom: 50px;
 }
 
+@media(max-width:767px) {
+
+
+    .products>h2 {
+        font-size: 18px;
+    }
+}
+
 @media(max-width:632px) {
     .productStyles {
         width: 200px;
 
+    }
+
+    .products>h2 {
+        font-size: 18px;
     }
 }
 
@@ -86,7 +98,6 @@
 @media(max-width:450px) {
     .productStyles {
         width: 150px;
-
     }
 }
 
