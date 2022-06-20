@@ -1,8 +1,14 @@
 import './styles/footer.css'
 import { BsApple } from 'react-icons/bs'
 import { IoLogoGooglePlaystore } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
 
 export default function Footer() {
+    const navigate = useNavigate()
+
+    const goToHomePage = () => {
+        navigate('/')
+    }
     return (
         <>
             <div className='footer'>
@@ -18,7 +24,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h3>Shopapp</h3>
+                        <h3 onClick={goToHomePage}>Shopapp</h3>
                         <ul>
                             <li>Help Center</li>
                             <li>How to Buy</li>

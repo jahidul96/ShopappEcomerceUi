@@ -21,6 +21,7 @@
 .prenavContainer>nav>ul>li {
     font-size: 12px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .prenavContainer>nav>ul>li:hover {

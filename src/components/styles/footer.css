@@ -17,12 +17,18 @@
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .footerContainer>div>ul>li {
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 14px;
+    cursor: pointer;
+}
+
+.footerContainer>div>ul>li:hover {
+    color: orange;
 }
 
 .footerLastDiv {

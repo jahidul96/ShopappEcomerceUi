@@ -3,8 +3,6 @@
     overflow: hidden;
 }
 
-
-
 .DetailsCustomcontainer {
     width: 90%;
     margin: 30px auto;
@@ -15,6 +13,8 @@
     background-color: #fff;
 
 }
+
+
 
 /* first left image div styles */
 
@@ -38,7 +38,10 @@
 }
 
 
+
+
 /* midlle details div styles  */
+
 .productDetailsMiddleDiv {
     flex: 350px;
     padding: 20px;
@@ -77,8 +80,6 @@
     color: #34B3F1;
     margin: 0 5px;
 }
-
-
 
 .brandLinkText {
     color: #34B3F1;
@@ -141,6 +142,7 @@
     margin-right: 10px;
 
 }
+
 
 
 /* last right delivery div styles */
@@ -227,7 +229,6 @@
 
 /* seller rating div */
 
-
 .sellerRatingDiv {
     display: flex;
     justify-content: space-between;
@@ -272,6 +273,9 @@
     text-decoration: underline;
     color: #2a7aa2;
 }
+
+
+/* responsive styles */
 
 
 @media(max-width:1200px) {
