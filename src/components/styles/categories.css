@@ -1,5 +1,6 @@
 .categories {
-    margin-top: 50px;
+    margin-top: 20px;
+
 }
 
 .categories>h2 {
@@ -25,6 +26,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.categoriesItemElement:hover {
+    transform: scale(1.1);
+
 }
 
 .categoriesItemElement>img {

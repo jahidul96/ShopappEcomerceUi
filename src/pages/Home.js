@@ -6,23 +6,11 @@ import Categories from "../components/Categories";
 import { CategoriesData } from "../data/categories";
 import Products from "../components/Products";
 import Footer from "../components/Footer";
+import { products } from '../data/products';
 
 export default function Home() {
-
-    const [products, setProducts] = useState([])
-
     useEffect(() => {
-        const fetchProducts = () => {
-            fetch('https://fakestoreapi.com/products')
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    setProducts(data)
-                })
-                .catch(err => console.log(err.message))
-
-        }
-        fetchProducts()
+        window.scrollTo(0, 0)
     }, [])
     return (
         <div>
@@ -30,7 +18,7 @@ export default function Home() {
             <div className="bodyColor">
                 <div className="container">
                     <div className="adBannerDivStyle">
-                        <img src="https://images.vexels.com/media/users/3/194698/raw/34d9aa618f832510ce7290b4f183484a-shop-online-slider-template.jpg" alt="image" />
+                        <img src="https://img.pikbest.com/background/20180831/ecommerce-gradient-fashion-banner-background_2746160.jpg!c1024wm0" alt="image" />
                     </div>
                     <HomeAdd />
                     <Categories catagoriesData={CategoriesData} />

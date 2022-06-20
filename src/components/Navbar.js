@@ -2,10 +2,17 @@ import './styles/nav.css'
 import { BiCart, BiSearch } from 'react-icons/bi'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
 
     const [showNav, setShowNav] = useState(false)
+
+    const navigate = useNavigate()
+
+    const gotoHomePage = () => {
+        navigate('/')
+    }
 
     const toggleNav = () => {
         setShowNav(!showNav)
@@ -18,7 +25,7 @@ export default function Navbar() {
 
             <div className='navbar'>
                 <div className='container navItemWrapper'>
-                    <div className='navLogoDiv'>
+                    <div className='navLogoDiv' onClick={gotoHomePage}>
                         <h2>ShopApp</h2>
                     </div>
 

@@ -8,9 +8,14 @@ import { VscDashboard } from 'react-icons/vsc'
 import { GiBoomerangCross } from 'react-icons/gi'
 import FromSameStore from '../components/FromSameStore'
 import Footer from '../components/Footer'
+import { useEffect } from 'react'
 
 
 export default function Details() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
 
 
