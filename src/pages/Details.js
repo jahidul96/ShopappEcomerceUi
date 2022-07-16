@@ -1,53 +1,39 @@
-import './styles/details.css'
-import { AiFillStar, AiOutlineHeart, AiOutlineInfoCircle } from 'react-icons/ai'
-import { BsFillShareFill } from 'react-icons/bs'
-import { TbCurrencyTaka, TbTruckDelivery } from 'react-icons/tb'
-import { GrLocation } from 'react-icons/gr'
-import { BsCashStack, BsFillChatRightDotsFill } from 'react-icons/bs'
-import { VscDashboard } from 'react-icons/vsc'
-import { GiBoomerangCross } from 'react-icons/gi'
-import FromSameStore from '../components/FromSameStore'
-import Footer from '../components/Footer'
-import { useEffect } from 'react'
-import DeatilsDelivery from '../components/DeatilsDelivery'
-import ProductDescription from '../components/ProductDescription'
-
+import "./styles/details.css";
+import FromSameStore from "../components/FromSameStore";
+import Footer from "../components/Footer";
+import {useEffect} from "react";
+import DeatilsDelivery from "../components/DeatilsDelivery";
+import ProductDescription from "../components/ProductDescription";
 
 export default function Details() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	return (
+		<div className="productDetailsContainer">
+			<div className="DetailsCustomcontainer productDetailsFlexDiv">
+				{/* first left immage div */}
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-    return (
+				<div className="productDetailsImageDiv">
+					<div className="productDetailsImageWrapperDiv">
+						<img src="https://qph.cf2.quoracdn.net/main-qimg-1cf4e8389904b04cf20c0d95a4bf3b03-lq" />
+					</div>
 
+					{/* slider image if multiple image have */}
+					<div></div>
+				</div>
 
-        <div className='productDetailsContainer'>
+				{/* midlle details div */}
+				<ProductDescription />
 
-            <div className='DetailsCustomcontainer productDetailsFlexDiv'>
+				{/* right delivery details div */}
+				<DeatilsDelivery />
+			</div>
 
-                {/* first left immage div */}
-
-                <div className='productDetailsImageDiv'>
-                    <div className='productDetailsImageWrapperDiv'>
-                        <img src='https://qph.cf2.quoracdn.net/main-qimg-1cf4e8389904b04cf20c0d95a4bf3b03-lq' />
-                    </div>
-
-                    {/* slider image if multiple image have */}
-                    <div>
-                    </div>
-                </div>
-
-                {/* midlle details div */}
-                <ProductDescription />
-
-                {/* right delivery details div */}
-                <DeatilsDelivery />
-            </div>
-
-            <div className='DetailsCustomcontainer'>
-                <FromSameStore />
-            </div>
-            <Footer />
-        </div>
-    )
+			<div className="DetailsCustomcontainer">
+				<FromSameStore />
+			</div>
+			<Footer />
+		</div>
+	);
 }

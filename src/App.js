@@ -5,6 +5,7 @@ import PreNav from "./components/PreNav";
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/product/productdetails" element={<Details />} />
+				<Route path="/product/:id" element={<ProductsPage />} />
 				<Route path="/cart" element={<Cart />} />
 			</Routes>
 		</BrowserRouter>

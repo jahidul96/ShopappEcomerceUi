@@ -1,0 +1,11 @@
+.productpageContainer {
+	background-color: #ebe6e6;
+	overflow: hidden;
+}
+
+.productpageContainer > h1 {
+	text-align: center;
+	font-size: 22px;
+	margin-top: 20px;
+	margin-bottom: -20px;
+}
