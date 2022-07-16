@@ -2,7 +2,7 @@ import "./styles/nav.css";
 import {BiCart, BiSearch} from "react-icons/bi";
 import {AiOutlineMenu} from "react-icons/ai";
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 import {InputComp} from "./Reuse";
 
 export default function Navbar() {
@@ -24,6 +24,8 @@ export default function Navbar() {
 
 	let pagelink = window.location.href;
 	let cartlink = pagelink.slice(pagelink.length - 4);
+	let loginlink = window.location.href;
+	let loglink = pagelink.slice(pagelink.length - 12);
 
 	return (
 		<>
@@ -46,12 +48,17 @@ export default function Navbar() {
 					</div>
 					<div className="navRightDiv">
 						<div
-							className={cartlink == "cart" ? " " : "cartIcon"}
+							className={
+								cartlink == "cart" || loglink == "login/signin"
+									? " "
+									: "cartIcon"
+							}
 							onClick={gotoCart}
 						>
 							<div
 								className={
-									cartlink == "cart"
+									cartlink == "cart" ||
+									loglink == "login/signin"
 										? "cartLink cart__container"
 										: "cart__container"
 								}
@@ -89,7 +96,11 @@ export default function Navbar() {
 						<button>Save more on App</button>
 						<button>Sell on Shop</button>
 						<button>Customer Care</button>
-						<button>Singin/Login</button>
+
+						<button>
+							<Link to={"/login/signin"}>Singin/Login</Link>
+						</button>
+
 						<button>Tearms & Policy</button>
 					</div>
 				</div>

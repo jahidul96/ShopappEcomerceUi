@@ -6,6 +6,7 @@ import PreNav from "./components/PreNav";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import ProductsPage from "./pages/ProductsPage";
+import Login from "./pages/Login";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			</div>
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/login/signin" element={<Login />} />
 				<Route path="/product/productdetails" element={<Details />} />
 				<Route path="/product/:id" element={<ProductsPage />} />
 				<Route path="/cart" element={<Cart />} />
