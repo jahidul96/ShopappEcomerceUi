@@ -1,27 +1,29 @@
 .slider {
-    height: 60vh;
-    cursor: pointer;
+	height: 60vh;
+	cursor: pointer;
+	padding-bottom: 20px;
 }
 
 .sliderItemWrapper {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
-.sliderItemWrapper>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.sliderItemWrapper > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-@media(max-width:1000px) {
-    .slider {
-        height: 50vh;
-    }
+@media (max-width: 1000px) {
+	.slider {
+		height: 50vh;
+	}
 }
 
-@media(max-width:767px) {
-    .slider {
-        height: 40vh;
-    }
+@media (max-width: 767px) {
+	.slider {
+		height: 40vh;
+		padding-bottom: 10px;
+	}
 }
