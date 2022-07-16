@@ -3,6 +3,7 @@ import {BiCart, BiSearch} from "react-icons/bi";
 import {AiOutlineMenu} from "react-icons/ai";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {InputComp} from "./Reuse";
 
 export default function Navbar() {
 	const [showNav, setShowNav] = useState(false);
@@ -13,9 +14,16 @@ export default function Navbar() {
 		navigate("/");
 	};
 
+	const gotoCart = () => {
+		navigate("/cart");
+	};
+
 	const toggleNav = () => {
 		setShowNav(!showNav);
 	};
+
+	let pagelink = window.location.href;
+	let cartlink = pagelink.slice(pagelink.length - 4);
 
 	return (
 		<>
@@ -27,8 +35,8 @@ export default function Navbar() {
 
 					<div className="navMiddleDiv">
 						<div>
-							<input
-								className="navbarInput"
+							<InputComp
+								classname={"navbarInput"}
 								placeholder="search..."
 							/>
 							<span className="searchBtn">
@@ -37,8 +45,17 @@ export default function Navbar() {
 						</div>
 					</div>
 					<div className="navRightDiv">
-						<div className="cartIcon">
-							<div>
+						<div
+							className={cartlink == "cart" ? " " : "cartIcon"}
+							onClick={gotoCart}
+						>
+							<div
+								className={
+									cartlink == "cart"
+										? "cartLink cart__container"
+										: "cart__container"
+								}
+							>
 								<span>
 									<BiCart size={30} />
 								</span>
