@@ -24,7 +24,6 @@ export default function Navbar() {
 
 	let pagelink = window.location.href;
 	let cartlink = pagelink.slice(pagelink.length - 4);
-	let loginlink = window.location.href;
 	let loglink = pagelink.slice(pagelink.length - 12);
 
 	return (
@@ -94,7 +93,11 @@ export default function Navbar() {
 
 					<div className="smallScreenPrenav">
 						<button>Save more on App</button>
-						<button>Sell on Shop</button>
+						<button>
+							<Link to={"/seller/signin/login"}>
+								BecomeSeller
+							</Link>
+						</button>
 						<button>Customer Care</button>
 
 						<button>

@@ -9,7 +9,11 @@ export default function PreNav() {
 				<nav>
 					<ul>
 						<li className="active">SAVE MORE ON APP</li>
-						<li>SELL ON SHOP</li>
+						<li>
+							<Link className="link" to={"/seller/signin/login"}>
+								BECOMESELLER
+							</Link>
+						</li>
 						<li>CUSTOMER CARE</li>
 						<li>
 							<Link className="link" to={"/login/signin"}>
