@@ -25,13 +25,18 @@ export default function Navbar() {
 	let pagelink = window.location.href;
 	let cartlink = pagelink.slice(pagelink.length - 4);
 	let loglink = pagelink.slice(pagelink.length - 12);
+	let sellerpage = pagelink.slice(pagelink.length - 13);
 
 	return (
 		<>
-			<div className="navbar">
+			<div
+				className={
+					sellerpage == "sellerprofile" ? "navbar_hide" : "navbar"
+				}
+			>
 				<div className="container navItemWrapper">
 					<div className="navLogoDiv" onClick={gotoHomePage}>
-						<h2>Irian's_Shop</h2>
+						<h2>ShopApp</h2>
 					</div>
 
 					<div className="navMiddleDiv">

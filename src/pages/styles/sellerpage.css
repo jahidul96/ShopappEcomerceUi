@@ -14,3 +14,95 @@
 	width: 75%;
 	padding: 20px;
 }
+
+.searchyourProduct {
+	display: flex;
+}
+.sellerSearch {
+	background-color: rgba(158, 158, 158, 0.2);
+	width: 60%;
+	height: 40px;
+	padding: 0 20px;
+	border: none;
+	outline: none;
+}
+
+.postProductBtnContainer {
+	width: 100%;
+	margin-top: 30px;
+}
+.sellerpostBtn {
+	width: 100%;
+	height: 40px;
+	background-color: #f85606;
+	border: none;
+	color: #fff;
+	font-weight: 500;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.profilepage {
+	margin: 20px 0;
+}
+
+.pageImgWrapper {
+	display: flex;
+	align-items: center;
+}
+
+.profileTop {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100px;
+	border-bottom: 1px solid #e1dada;
+}
+
+.pageImg {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.pageImgWrapper > p {
+	margin-left: 30px;
+	font-size: 18px;
+}
+
+.msgIcon {
+	cursor: pointer;
+}
+
+.msgIconDiv {
+	position: relative;
+}
+
+.notify {
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	background-color: crimson;
+	width: 17px;
+	height: 17px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.notify > p {
+	font-size: 10px;
+}
+
+.pageResponseMainDiv {
+	margin-top: 30px;
+}
+
+.flexStyleProfile {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
