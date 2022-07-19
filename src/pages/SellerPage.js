@@ -3,14 +3,22 @@ import FromSameStore from "../components/FromSameStore";
 import {ButtonComp, InputComp} from "../components/Reuse";
 import "./styles/sellerpage.css";
 import {TbBrandMessenger} from "react-icons/tb";
-import {BiSearch} from "react-icons/bi";
+import {useNavigate} from "react-router-dom";
 
 const SellerPage = () => {
+	const navigate = useNavigate();
+	const gotoPost = () => {
+		navigate("/sellerprofile/post");
+	};
 	return (
 		<div className="sellerpage_container">
 			<div className="sellerProfieContainer">
 				<div className="postProductBtnContainer">
-					<ButtonComp text="Post" classname={"sellerpostBtn"} />
+					<ButtonComp
+						click={gotoPost}
+						text="Post"
+						classname={"sellerpostBtn"}
+					/>
 				</div>
 				<ProfilePage />
 			</div>
@@ -36,6 +44,34 @@ const SellerPage = () => {
 	);
 };
 
+const sellerData = [
+	{
+		id: 1,
+		title: "Inbox response rate",
+		value: "100%",
+	},
+	{
+		id: 1,
+		title: "Delivery rate",
+		value: "100%",
+	},
+	{
+		id: 1,
+		title: "Client Rating",
+		value: "100%",
+	},
+	{
+		id: 1,
+		title: "Services",
+		value: "100%",
+	},
+	{
+		id: 1,
+		title: "This Month sell",
+		value: "20000",
+	},
+];
+
 const ProfilePage = () => {
 	const imgLink =
 		"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80";
@@ -54,30 +90,12 @@ const ProfilePage = () => {
 				</div>
 			</div>
 			<div className="pageResponseMainDiv">
-				<div className="flexStyleProfile">
-					<p>Inbox response rate</p>
-					<p>100%</p>
-				</div>
-				<div className="flexStyleProfile">
-					<p>Delivery rate</p>
-					<p>100%</p>
-				</div>
-				<div className="flexStyleProfile">
-					<p>Client Rating</p>
-					<p>100%</p>
-				</div>
-				<div className="flexStyleProfile">
-					<p>Services</p>
-					<p>100%</p>
-				</div>
-				<div className="flexStyleProfile">
-					<p>Total Product</p>
-					<p>200</p>
-				</div>
-				<div className="flexStyleProfile">
-					<p>This Month sell</p>
-					<p>20000</p>
-				</div>
+				{sellerData.map((data) => (
+					<div key={data.id} className="flexStyleProfile">
+						<p>{data.title}</p>
+						<p>{data.value}</p>
+					</div>
+				))}
 			</div>
 		</div>
 	);

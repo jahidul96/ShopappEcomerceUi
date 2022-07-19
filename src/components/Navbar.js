@@ -26,12 +26,16 @@ export default function Navbar() {
 	let cartlink = pagelink.slice(pagelink.length - 4);
 	let loglink = pagelink.slice(pagelink.length - 12);
 	let sellerpage = pagelink.slice(pagelink.length - 13);
+	let postpage = pagelink.slice(pagelink.length - 18);
 
 	return (
 		<>
 			<div
 				className={
-					sellerpage == "sellerprofile" ? "navbar_hide" : "navbar"
+					sellerpage == "sellerprofile" ||
+					postpage == "sellerprofile/post"
+						? "navbar_hide"
+						: "navbar"
 				}
 			>
 				<div className="container navItemWrapper">

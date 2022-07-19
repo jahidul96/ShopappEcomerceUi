@@ -9,6 +9,7 @@ import ProductsPage from "./pages/ProductsPage";
 import Login from "./pages/Login";
 import BecomeSeller from "./pages/BecomeSeller";
 import SellerPage from "./pages/SellerPage";
+import Post from "./pages/Post";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/cart" element={<Cart />} />
 				<Route path="/seller/signin/login" element={<BecomeSeller />} />
 				<Route path="/sellerprofile" element={<SellerPage />} />
+				<Route path="/sellerprofile/post" element={<Post />} />
 			</Routes>
 		</BrowserRouter>
 	);
