@@ -3,40 +3,62 @@ import {ButtonComp, InputComp} from "../components/Reuse";
 import "./styles/post.css";
 import {TiDeleteOutline} from "react-icons/ti";
 
+let initialimgValue = localStorage.getItem("images")
+	? JSON.parse(localStorage.getItem("images"))
+	: [];
+
+let initialTags = localStorage.getItem("tags")
+	? JSON.parse(localStorage.getItem("tags"))
+	: [];
+
 const Post = () => {
-	const [images, setImages] = useState([]);
-	const [tags, setTags] = useState("");
-	const [allTags, setAllTags] = useState([]);
+	const [images, setImages] = useState(initialimgValue);
+	const [tag, setTag] = useState("");
+	const [allTags, setAllTags] = useState(initialTags);
+
 	const graveImg = (e) => {
 		const [file] = e.target.files;
 		let imgFile = URL.createObjectURL(file);
-		setImages((prev) => [
-			...prev,
+		let newImages = [
+			...images,
 			{
 				img: imgFile,
-				id: Math.floor(Math.random() * 100),
+				id: Math.floor(Math.random() * 1000),
 			},
-		]);
+		];
+		setImages(newImages);
+		localStorage.setItem("images", JSON.stringify(newImages));
 	};
 
 	const postData = (e) => {
 		e.preventDefault();
 		console.log(123);
-		console.log(tags);
 	};
 
 	const submitTags = (e) => {
 		e.preventDefault();
-		setAllTags((prev) => [
-			...prev,
+		let newTags = [
+			...allTags,
 			{
-				id: Math.floor(Math.random() * 100),
-				tags,
+				id: Math.floor(Math.random() * 1000),
+				tag,
 			},
-		]);
+		];
+		setAllTags(newTags);
+		localStorage.setItem("tags", JSON.stringify(newTags));
 	};
 
-	console.log(images);
+	const deleteImage = (id) => {
+		let delImg = images.filter((image) => image.id !== id);
+		setImages(delImg);
+		localStorage.setItem("images", JSON.stringify(delImg));
+	};
+
+	const deleteTag = (id) => {
+		let delTag = allTags.filter((tag) => tag.id !== id);
+		setAllTags(delTag);
+		localStorage.setItem("tags", JSON.stringify(delTag));
+	};
 
 	return (
 		<div className="postContainer">
@@ -55,7 +77,23 @@ const Post = () => {
 					</div>
 					<SelectComp />
 
-					<Tags setTags={setTags} submitTags={submitTags} />
+					{allTags.length ? (
+						<div className="postTagsStyle">
+							{allTags.map((data) => (
+								<SingleTag
+									data={data}
+									deleteTag={deleteTag}
+									key={data.id}
+								/>
+							))}
+						</div>
+					) : (
+						""
+					)}
+
+					{allTags.length < 5 && (
+						<Tags setTag={setTag} submitTags={submitTags} />
+					)}
 
 					<div className="postImage">
 						{images.length < 4 && (
@@ -70,7 +108,11 @@ const Post = () => {
 
 						<div className="imgGroup">
 							{images.map((img, i) => (
-								<ShowImage image={img} key={i} />
+								<ShowImage
+									image={img}
+									key={i}
+									deleteImage={deleteImage}
+								/>
 							))}
 						</div>
 					</div>
@@ -90,7 +132,7 @@ const SelectComp = () => {
 	return (
 		<div className="postinputGroup selectGroupStyle">
 			<div>
-				<label for="Quality">Quality : </label>
+				<label>Quality : </label>
 
 				<select name="quality" id="quality">
 					<option value="Extraordinay">Extraordinay</option>
@@ -100,7 +142,7 @@ const SelectComp = () => {
 				</select>
 			</div>
 			<div>
-				<label for="Categories">Categories : </label>
+				<label>Categories : </label>
 
 				<select name="" id="categories">
 					<option value="Fashion">Fashion</option>
@@ -116,23 +158,40 @@ const SelectComp = () => {
 	);
 };
 
-const Tags = ({setTags, submitTags}) => {
+const SingleTag = ({data, deleteTag}) => {
+	return (
+		<div className="singleTagWrapper">
+			<p>{data.tag}</p>
+			<div className="tagDelIconWrapper">
+				<TiDeleteOutline
+					className="delIcon"
+					onClick={() => deleteTag(data.id)}
+				/>
+			</div>
+		</div>
+	);
+};
+
+const Tags = ({setTag, submitTags}) => {
 	return (
 		<form className="tagsWrapper" onSubmit={submitTags}>
 			<input
-				onChange={(e) => setTags(e.target.value)}
+				onChange={(e) => setTag(e.target.value)}
 				placeholder={"tags"}
 				className={"loginInput "}
 			/>
 		</form>
 	);
 };
-const ShowImage = ({image}) => {
+const ShowImage = ({image, deleteImage}) => {
 	return (
 		<div className="chossenImgWrapper">
 			<img src={image.img} width={100} height={80} />
 			<div className="imageDelIcon">
-				<TiDeleteOutline className="delIcon" />
+				<TiDeleteOutline
+					onClick={() => deleteImage(image.id)}
+					className="delIcon"
+				/>
 			</div>
 		</div>
 	);
